@@ -19,8 +19,8 @@ import { SupportMembersService } from './support-members.service';
 import { SupportMember } from './entities/support-member.entity';
 import { CreateSupportMemberDto } from './dto/create-support-member.dto';
 import { UpdateSupportMemberDto } from './dto/update-support-member.dto';
-import { JwtAuthGuard } from 'src/session/guards/jwt-auth.guard';
-import { JwtSupportMembersAuthGuard } from 'src/session/guards/jwt-support-members-auth.guard';
+import { JwtAuthGuard } from '../session/guards/jwt-auth.guard';
+import { JwtSupportMembersAuthGuard } from '../session/guards/jwt-support-members-auth.guard';
 
 @Controller('support-members')
 export class SupportMembersController {

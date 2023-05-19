@@ -26,12 +26,12 @@ export class SupportMember {
   createdAt: Date;
 
   @BeforeInsert()
-  async hashPassword() {
+  async hashPassword?() {
     this.password = encrypt(this.password);
   }
 
   @BeforeUpdate()
-  async hashPasswordIfNew() {
+  async hashPasswordIfNew?() {
     this.password = encrypt(this.password);
   }
 }

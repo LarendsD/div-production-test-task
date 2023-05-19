@@ -20,7 +20,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { QueryRequestDto } from './dto/query-request.dto';
-import { JwtAuthGuard } from 'src/session/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../session/guards/jwt-auth.guard';
 
 @Controller('requests')
 export class RequestsController {
