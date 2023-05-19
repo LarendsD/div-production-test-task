@@ -17,11 +17,13 @@ import {
   ApiCookieAuth,
   ApiCreatedResponse,
   ApiOkResponse,
+  ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { QueryRequestDto } from './dto/query-request.dto';
 import { JwtAuthGuard } from '../session/guards/jwt-auth.guard';
 
+@ApiTags('requests')
 @Controller('requests')
 export class RequestsController {
   constructor(private readonly requestsService: RequestsService) {}

@@ -13,6 +13,7 @@ import {
   ApiCookieAuth,
   ApiCreatedResponse,
   ApiOkResponse,
+  ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { SupportMembersService } from './support-members.service';
@@ -22,6 +23,7 @@ import { UpdateSupportMemberDto } from './dto/update-support-member.dto';
 import { JwtAuthGuard } from '../session/guards/jwt-auth.guard';
 import { JwtSupportMembersAuthGuard } from '../session/guards/jwt-support-members-auth.guard';
 
+@ApiTags('support-members')
 @Controller('support-members')
 export class SupportMembersController {
   constructor(private readonly supportMembersService: SupportMembersService) {}
@@ -38,7 +40,6 @@ export class SupportMembersController {
   }
 
   @Post()
-  @ApiCookieAuth('access_token')
   @ApiCreatedResponse({ description: 'Succesfully created support member!' })
   @ApiBadRequestResponse({ description: 'Validation failed!' })
   async create(@Body() createSupportMemberDto: CreateSupportMemberDto) {

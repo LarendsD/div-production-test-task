@@ -16,10 +16,11 @@ export class UpdateSupportMemberDto {
   name: string;
 
   @ApiProperty({ example: 'newJohn@gmail.com', required: true })
+  @IsOptional()
   @IsString()
   @IsEmail()
   @Validate(CheckEmail, {
-    message: 'Email validation err',
+    message: 'This email is already exists!',
   })
   email: string;
 

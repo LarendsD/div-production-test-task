@@ -1,14 +1,12 @@
-import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { Status } from '../entities/enums/status.enum';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class QueryRequestDto {
   @ApiProperty({ description: 'Page number' })
-  @IsNumber()
   page: number;
 
   @ApiProperty({ description: 'Requests per page' })
-  @IsNumber()
   perPage: number;
 
   @ApiProperty({
