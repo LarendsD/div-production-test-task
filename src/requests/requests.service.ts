@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from './entities/request.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Between, MoreThanOrEqual, Repository } from 'typeorm';
+import { Between, Repository } from 'typeorm';
 import { Status } from './entities/enums/status.enum';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
@@ -27,7 +27,10 @@ export class RequestsService {
     return this.requestsRepository.find({
       where: {
         status,
-        createdAt: Between(dateFrom, dateTo),
+        createdAt: Between(
+          new Date(dateFrom ?? 0),
+          new Date(dateTo ?? Date.now()),
+        ),
       },
       take: perPage,
       skip: (page - 1) * perPage,

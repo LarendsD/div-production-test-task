@@ -18,21 +18,23 @@ export class QueryRequestDto {
   })
   @IsOptional()
   @IsEnum(Status)
-  status: Status;
+  status?: Status;
 
   @ApiProperty({
-    description: 'Date from create a request',
+    description: 'Date range "from" when created a request(YYYY-MM-DD)',
     format: 'date',
-    example: '10.12.1990',
+    example: '1990-12-10',
+    required: false,
   })
   @IsString()
-  dateFrom: string;
+  dateFrom?: string;
 
   @ApiProperty({
-    description: 'Date to create a request',
+    description: 'Date range "to" when created a request(YYYY-MM-DD)',
     format: 'date',
-    example: '10.12.2025',
+    example: '2025-12-10',
+    required: false,
   })
   @IsString()
-  dateTo: string;
+  dateTo?: string;
 }

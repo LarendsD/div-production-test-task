@@ -17,7 +17,7 @@ describe('AppController', () => {
   describe('root', () => {
     it('should return "Hello World!"', () => {
       expect(appController.getHello()).toBe(
-        'Welcome to the server for applications! Please follow to /api for documentation!',
+        'Welcome to the server for your requests! Please follow to /api for documentation!',
       );
     });
   });
