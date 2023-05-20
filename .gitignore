@@ -2,6 +2,7 @@
 /dist
 /node_modules
 /emails/*.email
+.env
 
 # Logs
 logs
